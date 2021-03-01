@@ -21,7 +21,9 @@ public class Order {
         this.date = LocalDateTime.now();
     }
 
-    public void addItem(Product prod, int quantity) {
+    public void addItem(Product prod, int quantity) throws NotEnoughQuantityException {
+        if(quantity > prod.getQuantity())
+            throw new NotEnoughQuantityException("cannot buy more than quantity");
         items.add(new OrderItem(prod, quantity));
     }
 

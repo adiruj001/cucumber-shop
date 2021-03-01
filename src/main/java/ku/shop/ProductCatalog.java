@@ -23,4 +23,6 @@ public class ProductCatalog {
     public Product getProduct(String name) {
         return products.get(name);
     }
+
+
 }
